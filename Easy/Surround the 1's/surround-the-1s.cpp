@@ -7,7 +7,7 @@ using namespace std;
 
 class Solution {
 public:
-    int Count(vector<vector<int> >& matrix) {
+     int Count(vector<vector<int> >& matrix) {
         int n=matrix.size();
         int m=matrix[0].size();
         int count=0;
