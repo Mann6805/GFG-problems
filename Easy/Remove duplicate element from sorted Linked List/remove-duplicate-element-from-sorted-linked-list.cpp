@@ -68,20 +68,20 @@ struct Node {
 //Function to remove duplicates from sorted linked list.
 Node *removeDuplicates(Node *head)
 {
-    Node* current = head;
-    if(head==NULL || head->next == NULL)
-        return head;
-    Node* curr = head->next;
-    Node* prev = head;
-    while(curr!=NULL){
-        if(curr->data == prev->data){
-            curr = curr->next;
-            prev->next = curr;
-        }
-        else{
-            prev = curr;
-            curr = curr->next;
-        }
-    }
-    return head;
+    Node *temp = head;
+ int check = head->data;
+ 
+ while(temp->next != NULL)
+ {
+     if(check == temp->next->data)
+     {
+         temp->next=temp->next->next;
+     }
+     else
+     {
+         check = temp->next->data;
+         temp = temp->next;
+     }
+ }
+ return head;
 }
